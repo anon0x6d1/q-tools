@@ -1,0 +1,26 @@
+{
+    "author": [
+        "TrustyJAID, modifications by Anonymous"
+    ],
+    "bot_version": [
+        3,
+        0,
+        0
+    ],
+    "description": "Real-time Q drop aggreagation and notification",
+    "disabled": false,
+    "hidden": false,
+    "install_msg": "This cog will create a folder and save some files locally. Do `[p]qchannel` to set up a channel for new posts.  Make sure that 'beautifulsoup4' and 'tweepy' libs are installed before running.",
+    "min_python_version": [
+        3,
+        6,
+        2
+    ],
+    "name": "QPosts",
+    "permissions": [],
+    "required_cogs": {},
+    "requirements": ["beautifulsoup4", "tweepy"],
+    "short": "",
+    "tags": [],
+    "type": "COG"
+}
