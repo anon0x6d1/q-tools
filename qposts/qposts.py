@@ -175,7 +175,7 @@ class QPosts(commands.Cog):
                             data = await resp.json()
                     except Exception as e:
                         print("[ERROR] grabbing THREAD JSON {}:\n{}\n{}".format(thread["no"], e, thread_url))
-                        await ctx.send("`Error grabbing /{}/".format(board))
+                        await ctx.send("`Error grabbing /{}/`".format(board))
                         continue
                     
                     for post in data["posts"]:
