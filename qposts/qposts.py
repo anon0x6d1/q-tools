@@ -151,7 +151,7 @@ class QPosts(commands.Cog):
         await ctx.send("`Searching threads for Q's tripcode...`")
 
         board_posts = await self.config.boards()
-        for board in self.legacy_boards:
+        for board in self.boards:
             print("[CHECKING] /{}/".format(board))
             try:
                 async with self.session.get(
@@ -160,6 +160,7 @@ class QPosts(commands.Cog):
                     data = await resp.json()
             except Exception as e:
                 print("[ERROR] {}".format(e))
+                print("[ERROR] grabbing CATALOG JSON {}:\n{}\n{}".format(thread["no"], e, thread_url))
                 await ctx.send("`Error grabbing /{}/ --> SKIPPING.`".format(board))
                 continue
             
@@ -175,7 +176,7 @@ class QPosts(commands.Cog):
                             data = await resp.json()
                     except Exception as e:
                         print("[ERROR] grabbing THREAD JSON {}:\n{}\n{}".format(thread["no"], e, thread_url))
-                        await ctx.send("`Error grabbing /{}/`".format(board))
+                        await ctx.send("`Error grabbing /{}/{} --> SKIPPING.`".format(board, thread["no"]))
                         continue
                     
                     for post in data["posts"]:
