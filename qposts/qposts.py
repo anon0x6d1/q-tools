@@ -185,7 +185,7 @@ class QPosts(commands.Cog):
                                 post.update({"sub": thread["sub"]})
                                 Q_posts.append(post)
                                 print("[Q DROP] /{}/ {} {}".format(board, thread["no"], post["trip"]))
-                                print(post)
+                                print(post["com"])
 
             board_posts[board] = Q_posts
             total += len(Q_posts)
