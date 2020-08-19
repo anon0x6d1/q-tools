@@ -185,6 +185,7 @@ class QPosts(commands.Cog):
                                 post.update({"sub": thread["sub"]})
                                 Q_posts.append(post)
                                 print("[Q DROP] /{}/ {} {}".format(board, thread["no"], post["trip"]))
+                                print(post)
 
             board_posts[board] = Q_posts
             total += len(Q_posts)
@@ -402,7 +403,6 @@ class QPosts(commands.Cog):
                                     if post["trip"] in self.trips:
                                         post.update({"sub": thread["sub"]})
                                         Q_posts.append(post)
-                                        print("TEST: " + post)
                 old_posts = [post_no["no"] for post_no in board_posts[board]]
 
                 for post in Q_posts:
