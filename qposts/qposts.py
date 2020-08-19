@@ -566,10 +566,15 @@ class QPosts(commands.Cog):
 
         utc_time =  '`ZULU:` {}\n'.format(utc)
         time =      '`EST:` {}\n'.format(ts)        
-        uid =       '`User ID:` _{}_\n'.format(qpost["id"])
+        
         bread =     '`Bread:` {}\n'.format(qpost["sub"])
         tor =       '`TOR:` {}\n'.format(tor_url)
         link =      '`Link:` {}\n'.format(url)
+        
+        if board == "projectdcomms":
+            uid =       '`User ID:` _{}_\n'.format("NONE")
+        else:
+            uid =       '`User ID:` _{}_\n'.format(qpost["id"])
 
         em = discord.Embed(colour=discord.Colour.blurple())
         em.set_author(name=name + qpost["trip"], url=url)
