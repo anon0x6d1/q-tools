@@ -16,7 +16,7 @@ from redbot.core import checks
 from redbot.core.data_manager import cog_data_path
 
 class QPosts(commands.Cog):
-    """Real-time Q drop aggreagation and notification."""
+    """Real-time Q drop aggregation and notification."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -402,6 +402,7 @@ class QPosts(commands.Cog):
                                     if post["trip"] in self.trips:
                                         post.update({"sub": thread["sub"]})
                                         Q_posts.append(post)
+                                        print("TEST: " + post)
                 old_posts = [post_no["no"] for post_no in board_posts[board]]
 
                 for post in Q_posts:
